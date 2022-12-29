@@ -150,7 +150,7 @@ header.shadow {
 }
 
 .home-text h2 {
-  font-size: 1.1rem;
+  font-size: 1.8rem;
   font-weight: 400;
 }
 
@@ -815,4 +815,8 @@ form textarea {
 h1 {
   font-weight: 400;
   letter-spacing: 1px;
+}
+
+.auto-type{
+  color: #0077b6;
 }

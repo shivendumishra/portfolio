@@ -78,3 +78,12 @@ function scrollHandler(e) {
 scrollHandler();
 line.style.display = 'block';
 window.addEventListener('scroll', scrollHandler);
+
+
+// typewriter effect
+let typed = new Typed(".auto-type", {
+  strings: ["Frontend Developer", "UI/UX Designer", "Android Developer"],
+  typeSpeed: 100,
+  backSpeed: 100,
+  loop: true
+});
