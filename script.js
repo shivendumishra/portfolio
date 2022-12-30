@@ -1,3 +1,10 @@
+// preloader
+let loader = document.getElementById("preloader");
+
+window.addEventListener("load", function () {
+  loader.style.display = "none";
+});
+
 let header = document.querySelector("header");
 let menu = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
@@ -28,23 +35,23 @@ darkmode.onclick = () => {
 
 // education section
 function qs(selector, all = false) {
-  return all ? document.querySelectorAll(selector) : document.querySelector(selector);
+  return all
+    ? document.querySelectorAll(selector)
+    : document.querySelector(selector);
 }
 
-const sections = qs('.section', true);
-const timeline = qs('.timeline');
-const line = qs('.line');
+const sections = qs(".section", true);
+const timeline = qs(".timeline");
+const line = qs(".line");
 line.style.bottom = `calc(100% - 20px)`;
 let prevScrollY = window.scrollY;
 let up, down;
 let full = false;
 let set = 0;
-const targetY = window.innerHeight * .8;
+const targetY = window.innerHeight * 0.8;
 
 function scrollHandler(e) {
-  const {
-    scrollY
-  } = window;
+  const { scrollY } = window;
   up = scrollY < prevScrollY;
   down = !up;
   const timelineRect = timeline.getBoundingClientRect();
@@ -63,12 +70,12 @@ function scrollHandler(e) {
     line.style.bottom = `-50px`;
   }
 
-  sections.forEach(item => {
+  sections.forEach((item) => {
     // console.log(item);
     const rect = item.getBoundingClientRect(); //     console.log(rect);
 
     if (rect.top + item.offsetHeight / 5 < targetY) {
-      item.classList.add('show-me');
+      item.classList.add("show-me");
     }
   }); // console.log(up, down);
 
@@ -76,14 +83,15 @@ function scrollHandler(e) {
 }
 
 scrollHandler();
-line.style.display = 'block';
-window.addEventListener('scroll', scrollHandler);
-
+line.style.display = "block";
+window.addEventListener("scroll", scrollHandler);
 
 // typewriter effect
 let typed = new Typed(".auto-type", {
   strings: ["Frontend Developer", "UI/UX Designer", "Android Developer"],
   typeSpeed: 100,
   backSpeed: 100,
-  loop: true
+  loop: true,
 });
+
+
