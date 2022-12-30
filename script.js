@@ -1,9 +1,9 @@
 // preloader
 let loader = document.getElementById("preloader");
 
-window.addEventListener("load", function () {
+window.addEventListener("load", setTimeout(() => {
   loader.style.display = "none";
-});
+}, 1000));
 
 let header = document.querySelector("header");
 let menu = document.querySelector("#menu-icon");
